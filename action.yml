@@ -1,0 +1,25 @@
+name: "Nx Workspace Affected"
+description: "Determines the affected apps and libs in an Nx workspace (monorepo)"
+inputs:
+    base:
+        description: "SHA to compare to"
+        required: false
+    head:
+        description: "SHA to compare from"
+        required: false
+
+outputs:
+    affected:
+        description: "Whether or not code changes affect the apps or libs"
+    affected-apps:
+        description: "an array of affected app names"
+    affected-libs:
+        description: "an array of affected lib names"
+
+runs:
+    using: "node12"
+    main: "dist/index.js"
+
+branding:
+    color: blue
+    icon: "filter"
